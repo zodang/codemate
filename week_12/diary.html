@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>week_12_diary</title>
+        <link rel="stylesheet" href="./static/font.css">
+        <link rel="stylesheet" href="./static/layout.css">
+        <link rel="stylesheet" href="./static/home.css">
+        <link rel="stylesheet" href="./static/album.css">
+        <link rel="stylesheet" href="./static/diary.css">
+        <script src="https://kit.fontawesome.com/862f1afc4c.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="bookcover">
+            <div class="bookdot">
+                <div class="page">
+                    <div class="column1">
+                        <div class="visit"><span id="basic-text">TODAY <span id="red">28</span> | TOTAL 24562</span></div>
+                        <div class="profile">
+                            <img class="profile-image" src="./static/images/profileImage.png">
+                            <div class="profile-text" id="basic-text">@zo_dang<br>저는 조당입니다. HTML과 CSS 공부를 하면서 미니홈피 웹 페이지를 만드는 중입니다. 화이팅화이팅</div>
+                            <div class="profile-dropdown">
+                                <div id="basic-text">조당 <i class="far fa-smile-wink"></i></div>
+                                <div class="dropdown">
+                                    <select>
+                                        <option value="padotagi">파도타기</option>
+                                        <option value="comunity">코뮤니티로 가기</option>
+                                        <option value="instagram">인스타그램으로 가기</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column2">
+                        <div class="top-text-box">
+                            <div class="title" id="basic-text">조당의 미니홈피</div>
+                            <div class="url" id="basic-text">http://url주소/나중에입력</div>
+                        </div>
+                        <!--diary-->
+                        <div class="main-content">
+                            <div class="calendar">
+                                <div class="day" id="bold-text">01.24<br>MON</div>
+                                <div class="month" id="basic-text"><span id="blue">1</span> <span id="red">2</span> 3 4 5 6 7 <span id="blue">8</span> <span id="red">9</span> 10 11 12 13 14 <span id="blue">15</span> <span id="red">16</span> 17 18 19 20 21 <span id="blue">22</span> <span id="red">32</span> 24 25 26 27 28 <span id="blue">29</span> <span id="red">30</span> <span id="red">31</span></div>
+                            </div>
+                            <div class="diary">
+                                <div class="diary-box">
+                                    <div class="diary-date" id="bold-text">2002.01.09</div>
+                                    <div class="diary-text" id="basic-text">난 지금 미쳐가고 있다<br>이 헤드폰에 내 모든 몸과<br>영혼을 맡겼다<br><br>음악만이 나라에서 허락하는<br>유일한 마약이니까<br><br>이게 바로 지금의 나다</div>
+                                </div>
+                                <div class="diary-box">
+                                    <div class="diary-date" id="bold-text">2002.02.15</div>
+                                    <div class="diary-text" id="basic-text">일루젼증후군<br><br>사랑하는 사람이나 호감이<br>가는 사람이 조금만 잘해줘도 착각하여<br>어찌할 바를 모르는 상태<br><br>머리가 깨지고 답답하며<br>하루내내 그 사람이 생각나는<br><br>비참한 증후군</div>
+                                </div>
+                                <div class="diary-box">
+                                    <div class="diary-date" id="bold-text">2002.05.27</div>
+                                    <div class="diary-text" id="basic-text">짝사랑<br><br>문자 보내보기 은근슬쩍 답장 기다리기<br>답장왔던 문자 다시 보기 전화 할까말까 고민하기<br><br>괜시리 연락할꺼리 만들어보기<br>연락없다고 괜히 툴툴대기 친구에게 상담해보기<br><br>'지금쯤 뭐할까?'하고 생가개보기<br>문득 그 사람 생각하고 '피식-'하고 웃음짓기</div>
+                                </div>
+                                <div class="diary-box">
+                                    <div class="diary-date" id="bold-text">2002.06.10</div>
+                                    <div class="diary-text" id="basic-text">오랜만에 너와의 그 대화 정말 기분이 좋더라.<br>정말 그때 하늘을 나는듯한 기분이였어<br><br>우린 이렇게 서로 멀어진게 아니라<br>아직은 서로에게 말을 걸기 어색했던거야<br><br>하지만 내가 그 어색함을 풀어나갈테니깐<br>너도 좀 도와줘</div>
+                                </div>
+                                <div class="secret-button">
+                                    <button onclick="getTextFile()"><i class="fas fa-lock icon"></i>조당의 비밀일기 보기</button>
+                                </div>
+                                <div class="diary-box" id="secret-box">
+                                    <div class="diary-date" id="bold-text">조당의 비밀일기</div>
+                                    <div class="diary-text basic-text" id="secret-diary"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu">
+                        <a href="./home.html"><div class="menu-box">홈</div></a>
+                        <a href="./diary.html"><div class="menu-box">다이어리</div></a>
+                        <a href="./album.html"><div class="menu-box">사진첩</div></a>
+                        <a href="#"><div class="menu-box">방명록</div></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function getTextFile() {
+                var input = document.createElement("input");
+                input.type = "file";
+                input.accept = "text/plain";
+                input.onchange = function(event) {
+                    processFile(event.target.files[0]);
+                };
+                input.click();
+            }
+
+            function processFile(file) {
+                var reader = new FileReader();
+                reader.readAsText(file, "utf-8");
+                
+                reader.onload = function() {
+                    document.getElementById("secret-diary").innerText = reader.result;
+                    document.getElementById("secret-box").style.display = "block";
+                };
+            }
+        </script>
+    </body>
+</html>
