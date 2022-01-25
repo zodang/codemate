@@ -33,6 +33,7 @@
 
 .diary-date {
     font-size: 0.75rem;
+    color: #00a2d3;
 }
 
 .diary-text {
@@ -52,7 +53,7 @@
     cursor: pointer;
 }
 .secret-button button:hover {
-    background-color: rgb(255, 70, 70);
+    background-color: #00a2d3;
     transition: 800ms ease-in all;
 }
 

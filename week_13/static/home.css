@@ -3,6 +3,10 @@
     margin: 10px 20px;
 }
 
+.main-text{
+    color: #00a2d3;
+}
+
 .update-box {
     display: flex
 }

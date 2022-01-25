@@ -102,6 +102,7 @@ body {
 
 .url {
     flex: 1;
+    text-align: right;
 }
 
 .main-content {
