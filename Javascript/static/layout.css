@@ -23,6 +23,8 @@
     margin: 20px;
 }
 
-.order-button {
+.order {
     margin: 20px;
+    padding: 20px 60px;
+    background-color: bisque;
 }
