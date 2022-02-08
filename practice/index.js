@@ -1,4 +1,14 @@
-function changeText() {
-    var h1 = document.getElementsByTagName('h1')
-    h1[0].innerHTML = "모각코 화이팅"
+function changeText1() {
+    var s = document.getElementById('one')
+    s.innerHTML = "모처럼이니"
+}
+
+function changeText2() {
+    var s = document.getElementById('two')
+    s.innerHTML = "각잡고 열심히 하면"
+}
+
+function changeText3() {
+    var s = document.getElementById('three')
+    s.innerHTML = "코린이 탈출"
 }
