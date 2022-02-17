@@ -1,0 +1,45 @@
+body {
+    background-color: white;
+}
+
+.layout {
+    width: 100%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.answer {
+    width: 500px;
+    height: 200px;
+    margin: 20px auto;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flog {
+    width: 250px;
+    height: 250px;
+    margin: 10px;
+    background-image: url("https://ww.namu.la/s/616e87c5efa21c2df94d5834317442325af4c799bebc9ac18ff27e6fb8a2493f017db58c0a60d38818237f5fe127fa42d1a041c9c0b9f1d9a079a88fc129eac19e1ba318ec03bcc66db2b34a11557570ca7474f1cdb71613090e86080f995573cfb9199d35a11e21b27fa149a9ce0e94");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.question {
+    margin: 10px;
+}
+
+.order {
+    margin: 10px;
+    padding: 20px 60px;
+    border-radius: 100px;
+    background-color: bisque;
+    border: none;
+    cursor: pointer;
+}
