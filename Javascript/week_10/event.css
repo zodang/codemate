@@ -1,0 +1,21 @@
+body {
+    width: 100%;
+    margin: 50px auto;
+}
+
+#box {
+    margin:0 auto;
+    text-align: center;
+}
+
+button {
+    border-radius: 50%;
+    background-color: #3cb371;
+    border: 1px solid white;
+    padding: 30px;
+}
+
+.fa-phone {
+    font-size: 30px;
+    color: white;
+}
