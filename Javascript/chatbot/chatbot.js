@@ -11,17 +11,17 @@ function check_text() {
     }
     else if (value == "불꺼줘") {
         document.querySelector("body").style.backgroundColor = "rgb(80, 80, 80)";
-        document.getElementById("flog").style.backgroundImage = "url(https://img.theqoo.net/img/mvFSv.jpg)";
+        document.getElementById("flog").style.backgroundImage = "url(./static/images/lightoff.png)";
     }
 
     else if (value == "불켜줘") {
         if (document.querySelector("body").style.backgroundColor == "white") {
             console.log("no...")
-            document.getElementById("flog").style.backgroundImage = "url('https://img.theqoo.net/img/LhbIK.jpg')";
+            document.getElementById("flog").style.backgroundImage = "url('./static/images/lighton2.jpg')";
         }
         else {
             document.querySelector("body").style.backgroundColor = "white";
-            document.getElementById("flog").style.backgroundImage = "url('https://image.librewiki.net/thumb/c/cd/Kermit-383368.jpg/450px-Kermit-383368.jpg')";
+            document.getElementById("flog").style.backgroundImage = "url('./static/images/lighton.jpg')";
         }
     }
 
