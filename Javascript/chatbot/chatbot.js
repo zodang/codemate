@@ -1,40 +1,81 @@
 var follow = 0;
 
+//타이핑 애니메이션
 var typing = document.getElementsByClassName('help')[0];
- 
-    var typewriter = new Typewriter(typing, {
-        loop: true,
-        });
+var typewriter = new Typewriter(typing, {
+    loop: true,
+    });
 
-    typewriter.typeString('개구리에게 말을 걸어보자')
-        .pauseFor(1000)
-        .deleteAll()
-        .typeString('안녕')
-        .pauseFor(1000)
-        .deleteAll()
-        .typeString('불켜줘')
-        .pauseFor(1000)
-        .deleteAll()
-        .typeString('불꺼줘')
-        .pauseFor(1000)
-        .deleteAll()
-        .typeString('따라해')
-        .pauseFor(1000)
-        .deleteAll()
-        .typeString('그만해')
-        .pauseFor(1000)
-        .deleteAll()
-        .typeString('잘가')
-        .pauseFor(1000)
-        .deleteAll()
-        .start();
+typewriter.typeString('개구리에게 말을 걸어보자')
+    .pauseFor(1000)
+    .deleteAll()
+    .typeString('안녕')
+    .pauseFor(1000)
+    .deleteAll()
+    .typeString('불켜줘')
+    .pauseFor(1000)
+    .deleteAll()
+    .typeString('불꺼줘')
+    .pauseFor(1000)
+    .deleteAll()
+    .typeString('따라해')
+    .pauseFor(1000)
+    .deleteAll()
+    .typeString('그만해')
+    .pauseFor(1000)
+    .deleteAll()
+    .typeString('잘가')
+    .pauseFor(1000)
+    .deleteAll()
+    .typeString('...')
+    .pauseFor(1000)
+    .deleteAll()
+    .start();
 
+
+//JSON을 이용한 챗봇의 말 배우기 기능
+var user_question = "";
+var user_answer = "";
+var teach = 0;
+var array = [];
+var array_num = 0
+
+
+//챗봇 기능
 function check_text() {
-    var value = document.getElementById("console").value;
+    var value = document.getElementById("console").value;   //사용자 입력값
     var flog = document.getElementsByClassName('flog')[0];
-    var text = document.getElementsByClassName("answer")[0];
+    var text = document.getElementsByClassName("answer")[0];  //개구리 대답
 
-    
+    if (teach == 1) {
+        if (value == "네") {
+            text.innerHTML = "뭐라고 가르칠까요?"
+            teach = 2;
+        }
+        else if (value == "아니요") {
+            text.innerHTML = "ㅇㅋ..."
+            teach = 0;
+        }
+        else {
+            text.innerHTML == "네 /아니요"
+        }
+        return;
+    }
+
+    if (teach == 2){
+        user_answer = value;
+        array.push({"question": user_question, "answer": user_answer});
+        text.innerHTML = "말을 배웠습니다.";
+        teach = 0;
+        return;
+    }
+
+    for (var i = 0; i < array.length; i++){
+        if (value == array[i].question) {
+            text.innerHTML = array[i].answer + "...";
+            return;
+        }
+    }
 
     if (value == "안녕") {
         text.innerHTML = "^^...";        
@@ -59,9 +100,20 @@ function check_text() {
         flog.style.backgroundImage = "url('https://2.gall-img.com/hygall/files/attach/images/82/358/354/232/7ade4f7baf9f19519d5dfd1fb919766a.jpg')";
     }
 
+    else if (value == "...") {
+        text.innerHTML = "ㅎㅎ...";
+        flog.style.backgroundImage = "url('https://2.gall-img.com/hygall/files/attach/images/82/891/681/296/65788c5eb4fbbfa7537d90d6a3aee16b.jpg')";
+    }
+
     else {
         text.innerHTML = "???...";
         flog.style.backgroundImage = "url('https://t1.daumcdn.net/cfile/tistory/2147503C57BBD6E619')";
+        
+        setTimeout(function() {
+            text.innerHTML = "말을 가르쳐준다?<br>(네/아니요)"
+        },1500);
+        user_question = value; //가르쳐 줄 말 저장
+        teach = 1;
     }
 
     //따라하기
@@ -89,11 +141,7 @@ function check_text() {
 
 //엔터로 질문하기
 function press_enter() {
-    if(window.event.keyCode == 13) {
+    if (window.event.keyCode == 13) {
         check_text();
     }
 }
-
-
-
-
