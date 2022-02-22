@@ -40,13 +40,14 @@ var user_answer = "";
 var teach = 0;
 var array = [];
 
-//챗봇 기능
 
+//챗봇 기능
 function check_text() {
     var value = document.getElementById("console").value;   //사용자 입력값
-    var flog = document.getElementsByClassName('flog')[0];
+    var flog = document.getElementsByClassName('flog')[0];  //개구리 이미지
     var text = document.getElementsByClassName("answer")[0];  //개구리 대답
 
+    //가르치기
     if (teach == 1) {
         if (value == "네") {
             text.innerHTML = "뭐라고 가르칠까요?";
@@ -106,13 +107,11 @@ function check_text() {
         flog.style.backgroundImage = "url('https://2.gall-img.com/hygall/files/attach/images/82/891/681/296/65788c5eb4fbbfa7537d90d6a3aee16b.jpg')";
     }
 
-    //따라하기 기능
-    else if (follow == 0) {
-        if (value == "따라해") {
-            follow = 1;
-            text.innerHTML = "ㅇㅋ...";
-            flog.style.backgroundImage = "url('https://2.gall-img.com/hygall/files/attach/images/82/358/354/232/cc643e1cf451ab0fea80dfd6cbf6dfb3.png')";
-        }
+    //따라하기
+    else if (follow == 0 && value == "따라해") {
+        follow = 1;
+        text.innerHTML = "ㅇㅋ...";
+        flog.style.backgroundImage = "url('https://2.gall-img.com/hygall/files/attach/images/82/358/354/232/cc643e1cf451ab0fea80dfd6cbf6dfb3.png')";
     }
 
     else if (follow == 1) {
@@ -129,7 +128,7 @@ function check_text() {
     }
 
     else {
-        console.log("???...")
+        console.log("??")
         text.innerHTML = "???...";
         flog.style.backgroundImage = "url('https://t1.daumcdn.net/cfile/tistory/2147503C57BBD6E619')";
         
