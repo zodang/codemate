@@ -106,19 +106,8 @@ function check_text() {
         flog.style.backgroundImage = "url('https://2.gall-img.com/hygall/files/attach/images/82/891/681/296/65788c5eb4fbbfa7537d90d6a3aee16b.jpg')";
     }
 
-    else {
-        text.innerHTML = "???...";
-        flog.style.backgroundImage = "url('https://t1.daumcdn.net/cfile/tistory/2147503C57BBD6E619')";
-        
-        setTimeout(function() {
-            text.innerHTML = "말을 가르쳐준다?<br>(네/아니요)"
-        },1500);
-        user_question = value; //가르쳐 줄 말 저장
-        teach = 1;
-    }
-
     //따라하기 기능
-    if (follow == 0) {
+    else if (follow == 0) {
         if (value == "따라해") {
             follow = 1;
             text.innerHTML = "ㅇㅋ...";
@@ -137,6 +126,18 @@ function check_text() {
             text.innerHTML = value + "...";
             flog.style.backgroundImage = "url('https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FrRfa2%2FbtqYQxFQluA%2FjxGkvZoORy5TqDZjVfLVN0%2Fimg.jpg')";
         }
+    }
+
+    else {
+        console.log("???...")
+        text.innerHTML = "???...";
+        flog.style.backgroundImage = "url('https://t1.daumcdn.net/cfile/tistory/2147503C57BBD6E619')";
+        
+        setTimeout(function() {
+            text.innerHTML = "말을 가르쳐준다?<br>(네/아니요)"
+        },1500);
+        user_question = value; //가르쳐 줄 말 저장
+        teach = 1;
     }
 }
 
