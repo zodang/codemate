@@ -1,6 +1,4 @@
-var follow = 0;
-
-//타이핑 애니메이션
+//상단 타이핑 애니메이션
 var typing = document.getElementsByClassName('help')[0];
 var typewriter = new Typewriter(typing, {
     loop: true,
@@ -33,15 +31,17 @@ typewriter.typeString('개구리에게 말을 걸어보자')
     .start();
 
 
-//JSON을 이용한 챗봇의 말 배우기 기능
+//따라하기 기능을 위한 변수
+var follow = 0;
+
+//말 배우기 기능을 위한 변수
 var user_question = "";
 var user_answer = "";
 var teach = 0;
 var array = [];
-var array_num = 0
-
 
 //챗봇 기능
+
 function check_text() {
     var value = document.getElementById("console").value;   //사용자 입력값
     var flog = document.getElementsByClassName('flog')[0];
@@ -49,7 +49,7 @@ function check_text() {
 
     if (teach == 1) {
         if (value == "네") {
-            text.innerHTML = "뭐라고 가르칠까요?"
+            text.innerHTML = "뭐라고 가르칠까요?";
             teach = 2;
         }
         else if (value == "아니요") {
@@ -57,7 +57,7 @@ function check_text() {
             teach = 0;
         }
         else {
-            text.innerHTML == "네 /아니요"
+            text.innerHTML == "네 /아니요";
         }
         return;
     }
@@ -70,6 +70,7 @@ function check_text() {
         return;
     }
 
+    //가르친 말이 배열에 있으면 출력
     for (var i = 0; i < array.length; i++){
         if (value == array[i].question) {
             text.innerHTML = array[i].answer + "...";
@@ -90,7 +91,7 @@ function check_text() {
     else if (value == "불꺼줘") {
         text.innerHTML = "zzz..."
         document.querySelector("body").style.backgroundColor = "rgb(80, 80, 80)";
-        text.style.backgroundColor = "white"
+        text.style.backgroundColor = "white";
         flog.style.backgroundImage = "url('https://2.gall-img.com/hygall/files/attach/images/82/358/354/232/eae7e107387042188da08d45534ab747.jpg')";
     }
 
@@ -116,7 +117,7 @@ function check_text() {
         teach = 1;
     }
 
-    //따라하기
+    //따라하기 기능
     if (follow == 0) {
         if (value == "따라해") {
             follow = 1;

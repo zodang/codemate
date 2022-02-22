@@ -23,8 +23,8 @@ body {
 }
 
 .flog {
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
     margin: 10px;
     background-image: url("https://ww.namu.la/s/616e87c5efa21c2df94d5834317442325af4c799bebc9ac18ff27e6fb8a2493f017db58c0a60d38818237f5fe127fa42d1a041c9c0b9f1d9a079a88fc129eac19e1ba318ec03bcc66db2b34a11557570ca7474f1cdb71613090e86080f995573cfb9199d35a11e21b27fa149a9ce0e94");
     background-size: contain;
