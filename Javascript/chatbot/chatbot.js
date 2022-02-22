@@ -67,6 +67,7 @@ function check_text() {
         user_answer = value;
         array.push({"question": user_question, "answer": user_answer});
         text.innerHTML = "말을 배웠습니다.";
+        flog.style.backgroundImage = "url('https://2.gall-img.com/hygall/files/attach/images/82/891/681/296/a3bfe4e944d8c6faa2751626de666d12.jpg')";
         teach = 0;
         return;
     }
