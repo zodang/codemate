@@ -1,10 +1,12 @@
-import Instagram from './Hello';
+import Hello from './Hello';
+import Bye  from './Bye';
 
 function App() {
   return (
     <div>
-      <Instagram />
-    </div>
+      <Hello />
+      <Bye />
+      </div>
   );
 }
 
