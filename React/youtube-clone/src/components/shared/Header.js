@@ -1,16 +1,17 @@
 import youtube_logo from '../../data/youtube_logo.png'
 import styles from './Header.module.css';
-//아이콘
 import { FiMenu } from 'react-icons/fi';
 import { IoSearchOutline } from 'react-icons/io5';
 import { BsGrid3X3Gap } from 'react-icons/bs';
 import { HiOutlineDotsVertical } from 'react-icons/hi';
 
-function Header() {
+//checkMenu함수 받아옴
+function Header({checkMenu}) {
     return (
     <div className={styles.header}>
         <div className={styles.tab}>
-            <FiMenu className={styles.icon} />
+            {/* 클릭시 checkMenu 적용 */}
+            <FiMenu className={styles.icon} onClick={checkMenu}/>
             <img src={youtube_logo} alt="로고" className={styles.logo}></img>
         </div>
         <div className={styles['center-tab']}>
