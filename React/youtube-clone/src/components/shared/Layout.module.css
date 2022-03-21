@@ -19,3 +19,15 @@
     flex: 1;
     margin-left: 240px;
 }
+
+.fullContents {
+    margin-left: 0;
+}
+
+@media screen and (max-width: 911px) {
+    .contents {
+        margin-left: 72px;
+    }
+}
+
+

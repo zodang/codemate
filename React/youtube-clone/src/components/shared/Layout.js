@@ -18,7 +18,7 @@ function Layout({children, activeMenu}) {
             <div className={styles.layout}>
                 {/*menu가 true이면 원래 메뉴, false이면 빈 태그 */}
                 {menu ? <Menu activeMenu={activeMenu}/> : <div></div>}  
-                <div className={styles.contents}>{children}</div>
+                <div className={menu ? styles.contents : styles.fullContents}>{children}</div>
             </div>
         </div>
     );
