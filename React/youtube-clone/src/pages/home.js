@@ -5,11 +5,12 @@ import HomeFilter from '../components/home/HomeFilter'
 import HomeCard from '../components/home/HomeCard';
 import {useState} from 'react';
 
-const target = ['전체', 'Music', 'Entertainment', 'Comedy'];
+const target = ['전체', 'BTS', 'LISA', '아이폰'];
 
 function Home() {
     const [filter, setFilter] = useState('전체');
     
+    //text를 data로 바꿈
     function mapFunc(data, index) {
         return (
             <HomeFilter
@@ -24,7 +25,7 @@ function Home() {
     }
 
     function filterFunc(data) {
-        if (filter === "전체" || data.category === filter) return true;
+        if (filter === "전체" || data.title.includes(filter) || data.description.includes(filter)) return true;
         return false;
     }
 
