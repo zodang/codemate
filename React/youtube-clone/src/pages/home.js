@@ -10,7 +10,6 @@ const target = ['전체', 'BTS', 'LISA', '아이폰'];
 function Home() {
     const [filter, setFilter] = useState('전체');
     
-    //text를 data로 바꿈
     function mapFunc(data, index) {
         return (
             <HomeFilter
