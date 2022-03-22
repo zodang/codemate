@@ -1,4 +1,5 @@
 import styles from './HomeCard.module.css';
+import {ProcessViewCount, ProcessUploadDate} from '../../utils';
 
 function HomeCard(data, index) {
     return (
@@ -24,8 +25,8 @@ function HomeCard(data, index) {
                     <div className={styles.title}>{data.title}</div>
                     <div className={styles.uploader}>{data.channelTitle}</div>
                     <div className={styles.flex}>
-                        <div className={styles.view}>{data.viewCount}</div>
-                        <div className={styles.date}>{data.date}</div>
+                        <div className={styles.view}>{ProcessViewCount(data.viewCount)}</div>
+                        <div className={styles.date}>{ProcessUploadDate(data.date)}</div>
                     </div>                    
                 </div>
             </div>
